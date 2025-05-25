@@ -11,7 +11,6 @@ import model.Owner;
 
 public class OwnerDAO {
 
-    /** Creează tabela owner */
     public void createTable() {
         String sql = """
             CREATE TABLE IF NOT EXISTS owner (
@@ -29,7 +28,6 @@ public class OwnerDAO {
         }
     }
 
-    /** Inserează un proprietar nou */
     public void insertOwner(String name, String phone, String email) {
         String sql = "INSERT INTO owner(name, phone, email) VALUES (?, ?, ?)";
         try (Connection conn = DBconnection.getConnection();
@@ -42,8 +40,6 @@ public class OwnerDAO {
             e.printStackTrace();
         }
     }
-
-    /** Returnează toți proprietarii */
     public List<Owner> getAllOwners() {
         List<Owner> list = new ArrayList<>();
         String sql = "SELECT * FROM owner";
@@ -65,7 +61,6 @@ public class OwnerDAO {
         return list;
     }
 
-    /** Actualizează un proprietar existent */
     public void updateOwner(int id, String name, String phone, String email) {
         String sql = "UPDATE owner SET name = ?, phone = ?, email = ? WHERE id = ?";
         try (Connection conn = DBconnection.getConnection();
@@ -80,7 +75,6 @@ public class OwnerDAO {
         }
     }
 
-    /** Șterge un proprietar după ID */
     public void deleteOwner(int id) {
         String sql = "DELETE FROM owner WHERE id = ?";
         try (Connection conn = DBconnection.getConnection();
