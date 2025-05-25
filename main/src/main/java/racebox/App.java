@@ -27,14 +27,12 @@ public class App {
         EmployeeDAO empDAO = new EmployeeDAO();
         DealershipVehicleDAO dvDAO = new DealershipVehicleDAO();
 
-        // creează tabelele (doar la prima rulare, restul de rânduri vor fi ignorate)
         vehicleDAO.createTable();
         ownerDAO.createTable();
         dealDAO.createTable();
         empDAO.createTable();
         dvDAO.createTable();
 
-        // apoi intri în meniul tău
         Scanner scanner = new Scanner(System.in);
 
         boolean running = true;
