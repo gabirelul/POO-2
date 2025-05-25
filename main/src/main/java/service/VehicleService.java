@@ -23,9 +23,6 @@ public class VehicleService {
                 .collect(Collectors.toList());
     }
 
-    /**
-     * Filters vehicles by minimum price.
-     */
     public List<Vehicle> filterByPrice(double minPrice) {
         return vehicles.stream()
                 .filter(v -> v.getPrice() >= minPrice)
@@ -38,12 +35,6 @@ public class VehicleService {
                 .collect(Collectors.toList());
     }
 
-    // alte metode originale…
-
-    /**
-     * Deletes a vehicle matching the exact brand, model, and year.
-     * Returns true if a vehicle was found and removed.
-     */
     public boolean deleteVehicleExact(String brand, String model, int year) {
         return vehicles.removeIf(v ->
                 v.getBrand().equalsIgnoreCase(brand) &&
