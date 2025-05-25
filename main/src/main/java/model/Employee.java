@@ -6,14 +6,12 @@ public class Employee {
     private String position;
     private int dealershipId;
 
-    // Constructor fără ID (la insert)
     public Employee(String name, String position, int dealershipId) {
         this.name = name;
         this.position = position;
         this.dealershipId = dealershipId;
     }
 
-    // Constructor cu ID (la citire din DB)
     public Employee(int id, String name, String position, int dealershipId) {
         this.id = id;
         this.name = name;
@@ -21,15 +19,13 @@ public class Employee {
         this.dealershipId = dealershipId;
     }
 
-    // Getter și setter pentru ID
     public int getId() {
         return id;
     }
     public void setId(int id) {
         this.id = id;
     }
-
-    // Getter și setter pentru name
+    
     public String getName() {
         return name;
     }
@@ -37,7 +33,6 @@ public class Employee {
         this.name = name;
     }
 
-    // Getter și setter pentru position
     public String getPosition() {
         return position;
     }
@@ -45,7 +40,6 @@ public class Employee {
         this.position = position;
     }
 
-    // Getter și setter pentru dealershipId
     public int getDealershipId() {
         return dealershipId;
     }
